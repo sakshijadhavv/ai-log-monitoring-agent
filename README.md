@@ -1,40 +1,39 @@
 # ai-log-monitoring-agent
 AI Log Monitoring &amp; Alert Triage Agent — Built a LangChain-based AI agent that analyzes application logs, classifies alert severity, identifies probable root causes, and recommends remediation steps, reducing manual log-review effort.
-                     ┌───────────────────┐
-                     │ Kubernetes / EC2  │
-                     │ Applications      │
-                     └─────────┬─────────┘
-                               │
-                               ▼
-                     ┌───────────────────┐
-                     │ Logs              │
-                     │ Loki / CloudWatch │
-                     └─────────┬─────────┘
-                               │
-                               ▼
-                     ┌───────────────────┐
-                     │ Alert Detector    │
-                     └─────────┬─────────┘
-                               │
-                               ▼
-                     ┌───────────────────┐
-                     │ LangChain Agent   │
-                     └─────────┬─────────┘
-                               │
-              ┌────────────────┼─────────────────┐
-              ▼                ▼                 ▼
-        Log Analysis       Kubernetes        Metrics
-                           Investigation
-              │                │                 │
-              └────────────────┼─────────────────┘
-                               ▼
-                     ┌───────────────────┐
-                     │ Incident Analysis │
-                     └─────────┬─────────┘
-                               │
-                    ┌──────────┼──────────┐
-                    ▼          ▼          ▼
-                  Slack      Jira       Email
+ ┌───────────────────┐
+ │ Kubernetes / EC2  │
+ │ Applications      │
+ └─────────┬─────────┘
+           │
+           ▼
+ ┌───────────────────┐
+ │ Logs              │
+ │ Loki / CloudWatch │
+ └─────────┬─────────┘
+           │
+           ▼
+ ┌───────────────────┐
+ │ Alert Detector    │
+ └─────────┬─────────┘
+           │
+           ▼
+┌───────────────────┐
+│ LangChain Agent   │
+└─────────┬─────────┘
+                  │
+ ┌────────────────┼─────────────────┐
+ ▼                ▼                 ▼
+Log Analysis  Kubernetes         Metrics Investigation
+│                │                
+└────────────────┼─────────────────┘
+                 ▼
+ ┌───────────────────┐
+ │ Incident Analysis │
+ └─────────┬─────────┘
+           │
+ ┌─────────┼──────────┐
+ ▼          ▼          ▼
+ Slack      Jira       Email
 
 
 
